@@ -1,0 +1,38 @@
+<header>
+  <nav class="flex justify-between items-center border-b-2 border-primary-black h-[50px]">
+    <p class="font-bold text-6xl">
+      <a href="/">NAZWA!</a>
+    </p>
+
+    <div class="lg:hidden h-[20px] flex flex-col justify-between cursor-pointer hover navigation-container group">
+      <div class="w-[25px] bg-primary-black h-[3px] transition-[width] duration-300 group-hover:w-[18px]"></div>
+      <div class="w-[18px] bg-primary-black h-[3px] transition-[width] duration-300 group-hover:w-[25px]"></div>
+      <div class="w-[25px] bg-primary-black h-[3px] transition-[width] duration-300 group-hover:w-[18px]"></div>
+    </div>
+
+    <div class="hidden lg:block">
+      <ul class="flex gap-4">
+      {%- for item in navigation.navItems %}
+        <li class="text-xl uppercase group px-4 pt-2 transition-shadow duration-200 cursor-pointer hover:shadow-[inset_0_4px_0_0_var(--color-accent)]
+        {% if item.url in page.url %}shadow-[inset_0_4px_0_0_var(--color-accent)]{% endif %}"
+        >
+          <span href="/{{ item.url }}">{{ item.title }}</span>
+        </li>
+      {%- endfor %}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="mobile-menu hidden fixed bg-accent top-0 left-0 right-0 bottom-0 overflow-hidden z-10 menu-visible">
+    <div class="absolute close-icon top-[10px] right-[10px]"></div>
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      {%- for item in navigation.navItems %}
+        <li class="text-4xl text-primary-black list-none uppercase group px-4 pt-2 transition-shadow duration-200 hover:shadow-[inset_0_4px_0_0_var(--color-primary-black)]
+        {% if item.url in page.url %}shadow-[inset_0_4px_0_0_var(--color-accent)]{% endif %}"
+        >
+          <a href="/{{ item.url }}">{{ item.title }}</a>
+        </li>
+      {%- endfor %}
+    </div>
+  </div>
+</header>

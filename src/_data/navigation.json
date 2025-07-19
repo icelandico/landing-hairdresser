@@ -1,0 +1,23 @@
+{
+  "navItems": [
+  {
+    "title": "Aktualności",
+    "url": "news"
+  },
+  {
+    "title": "Zespół",
+    "url": "team"
+  },
+  {
+    "title": "Oferta",
+    "url": "services"
+  },
+  {
+    "title": "Cennik",
+    "url": "pricing"
+  },
+  {
+    "title": "Kontakt",
+    "url": "contact"
+  }
+]}

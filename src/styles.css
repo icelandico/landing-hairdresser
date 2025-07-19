@@ -1,1 +1,78 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+@theme {
+  --color-accent: #D0DE10;
+  --color-primary-black: #010101;
+  --color-primary-grey: #8D8D8D;
+}
+
+@layer components {
+  h1 {
+    @apply text-4xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  h3 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  h4 {
+    @apply text-xl;
+    @apply font-semibold;
+  }
+  h5 {
+    @apply text-lg;
+    @apply font-semibold;
+  }
+  h6 {
+    @apply text-sm;
+    @apply font-semibold;
+  }
+}
+
+.mobile-menu.hidden {
+  display: none;
+}
+
+.menu-visible {
+  display: block;
+}
+
+.close-icon {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.close-icon:hover {
+  opacity: 1;
+}
+.close-icon:before, .close-icon:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close-icon:before {
+  transform: rotate(45deg);
+}
+.close-icon:after {
+  transform: rotate(-45deg);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
